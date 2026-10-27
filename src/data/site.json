@@ -1,0 +1,491 @@
+{
+  "skills": [
+    [
+      "devops",
+      "cloud & CI"
+    ],
+    [
+      "rag",
+      "RAG / retrieval"
+    ],
+    [
+      "ai-workflow",
+      "AI-assisted dev"
+    ],
+    [
+      "pipelines",
+      "async pipelines"
+    ],
+    [
+      "agents",
+      "agents & tool use"
+    ],
+    [
+      "llm-cost",
+      "LLM cost control"
+    ],
+    [
+      "auth",
+      "auth & security"
+    ],
+    [
+      "eval",
+      "eval & gates"
+    ],
+    [
+      "fullstack",
+      "full-stack product"
+    ],
+    [
+      "vision",
+      "vision"
+    ]
+  ],
+  "nodes": [
+    {
+      "id": "root",
+      "kind": "root",
+      "sec": "orange",
+      "x": 133,
+      "y": 372,
+      "code": "A-00",
+      "label": "HAO-FU CHANG",
+      "sub": "AI Product Engineer",
+      "title": "Hao-Fu Chang",
+      "meta": "AI Product Engineer · Taichung, Taiwan (UTC+8)",
+      "text": "Backend engineer who builds LLM products end to end, from the user need to the LLM backend. 2.5 years shipping backends for enterprise AI SaaS and an LLM EdTech startup.",
+      "bullets": [
+        "Python · Django · PostgreSQL · Celery",
+        "RAG and LLM infrastructure",
+        "AWS · GCP · Azure",
+        "Open to remote and relocation (Tokyo, Singapore and beyond)"
+      ],
+      "contact": true
+    },
+    {
+      "id": "work",
+      "kind": "hub",
+      "sec": "orange",
+      "icon": "case",
+      "x": 390,
+      "y": 133,
+      "parent": "root",
+      "code": "H-01",
+      "label": "WORK",
+      "title": "Work",
+      "meta": "Sep 2023 – Apr 2026",
+      "text": "Full-time backend roles at two AI companies. This is where most of the evidence lives; the builds repeat the same skills in public."
+    },
+    {
+      "id": "build",
+      "kind": "hub",
+      "sec": "green",
+      "icon": "chip",
+      "x": 390,
+      "y": 382,
+      "parent": "root",
+      "code": "H-02",
+      "label": "BUILD",
+      "title": "Build",
+      "meta": "Apr 2026 – now · public repos",
+      "text": "Independent AI products built in public. Each one has code, decision logs or measurements on GitHub."
+    },
+    {
+      "id": "archive",
+      "kind": "hub",
+      "sec": "archive",
+      "icon": "disk",
+      "x": 390,
+      "y": 600,
+      "parent": "root",
+      "code": "H-03",
+      "label": "ARCHIVE",
+      "title": "Archive",
+      "meta": "2018 – 2024 · NCUE CSIE",
+      "text": "University and early projects. Run archive to unfold them on the map.",
+      "bullets": [
+        "B.S. Computer Science and Information Engineering, National Changhua University of Education, 2019–2023",
+        "NSTC Undergraduate Research Creativity Award, 2023 (one of 200 awardees)",
+        "Co-author, YOLOv5 UAV search paper, MDPI Machines 12(1):65, 2024",
+        "NCUE CSIE capstone competition, 1st place (team lead), 2023"
+      ],
+      "links": [
+        [
+          "doi.org/10.3390/machines12010065",
+          "https://doi.org/10.3390/machines12010065"
+        ]
+      ]
+    },
+    {
+      "id": "maiagent",
+      "kind": "item",
+      "sec": "orange",
+      "icon": "case",
+      "x": 690,
+      "y": 100,
+      "parent": "work",
+      "code": "W-01",
+      "label": "MaiAgent",
+      "sub": "Backend Engineer · 2024–26",
+      "title": "MaiAgent",
+      "meta": "Backend Engineer · enterprise AI SaaS · Dec 2024 – Apr 2026",
+      "bullets": [
+        "Document pipeline behind RAG retrieval: ingestion, multi-format parsing, vector indexing, automated reparse with metrics",
+        "Celery pipelines over 10M+ records; async exports up to 50,000 rows per request",
+        "Multi-tenant RBAC with 103 permission classes on Keycloak and Azure AD",
+        "Token tracking across LLM, embedding and reranker services for enterprise billing",
+        "CI runtime −20%; 96% coverage on core modules",
+        "Led Claude Code and Cursor adoption: 12+ custom skills and rules across 4 repos, used by the whole team"
+      ],
+      "stack": [
+        "Python",
+        "Django",
+        "PostgreSQL",
+        "Celery",
+        "LlamaIndex",
+        "AWS",
+        "GCP",
+        "Azure"
+      ],
+      "skills": [
+        "devops",
+        "rag",
+        "ai-workflow",
+        "pipelines",
+        "llm-cost",
+        "auth"
+      ]
+    },
+    {
+      "id": "wisdome",
+      "kind": "item",
+      "sec": "orange",
+      "icon": "case",
+      "x": 690,
+      "y": 166,
+      "parent": "work",
+      "code": "W-02",
+      "label": "Wisdome.AI",
+      "sub": "Back End Developer · 2023–24",
+      "title": "Wisdome.AI",
+      "meta": "Back End Developer · LLM EdTech startup · Sep 2023 – Oct 2024",
+      "bullets": [
+        "Sole backend engineer in a 10-person team; designed and built the backend from scratch",
+        "Django + DRF APIs, MySQL and MongoDB schemas, RabbitMQ + Celery jobs",
+        "CI/CD with GitHub Actions and Docker; AWS EC2, RDS, S3, CloudFront",
+        "Built the internal HR system end to end (React + Django)"
+      ],
+      "stack": [
+        "Django",
+        "DRF",
+        "MySQL",
+        "MongoDB",
+        "RabbitMQ",
+        "AWS",
+        "ELK",
+        "Grafana"
+      ],
+      "skills": [
+        "devops",
+        "pipelines",
+        "fullstack"
+      ]
+    },
+    {
+      "id": "lumi-ai-customer-service",
+      "kind": "item",
+      "sec": "green",
+      "icon": "chip",
+      "x": 690,
+      "y": 250,
+      "parent": "build",
+      "code": "P-01",
+      "label": "lumi-ai-customer-service",
+      "sub": "Python · FastAPI · May 2026",
+      "title": "LUMI customer service agent",
+      "meta": "AI agent for an apparel store · May 2026",
+      "bullets": [
+        "Claude tool-use loop, max 5 rounds, with tools for product search, order status, promotions and human handoff",
+        "Order lookup gated by customer verification",
+        "Garment image recognition from customer photos",
+        "Chat widget plus an admin console"
+      ],
+      "stack": [
+        "Python",
+        "FastAPI",
+        "SQLite",
+        "Claude API"
+      ],
+      "skills": [
+        "agents",
+        "auth",
+        "fullstack",
+        "vision"
+      ],
+      "repo": true
+    },
+    {
+      "id": "dream-journal",
+      "kind": "item",
+      "sec": "green",
+      "icon": "chip",
+      "x": 690,
+      "y": 316,
+      "parent": "build",
+      "code": "P-02",
+      "label": "dream-journal",
+      "sub": "TypeScript · Next.js · May 2026",
+      "title": "Dream Journal",
+      "meta": "Consumer AI app · May 2026",
+      "bullets": [
+        "Five versioned interpretation schools: Jungian, Freudian, Eastern, spiritual, cognitive",
+        "Supabase auth with row-level security and SQL migrations",
+        "Anthropic SDK with prompt caching; zod validation",
+        "MVP built in about a day"
+      ],
+      "stack": [
+        "Next.js 16",
+        "React 19",
+        "TypeScript",
+        "Tailwind",
+        "Supabase"
+      ],
+      "skills": [
+        "fullstack",
+        "auth",
+        "llm-cost"
+      ],
+      "repo": true
+    },
+    {
+      "id": "vocab-pipeline",
+      "kind": "item",
+      "sec": "green",
+      "icon": "chip",
+      "x": 690,
+      "y": 382,
+      "parent": "build",
+      "code": "P-03",
+      "label": "vocab-pipeline",
+      "sub": "Python · Claude vision · 2026",
+      "title": "Vocab pipeline",
+      "meta": "Vision-LLM study pipeline · Aug – Oct 2026",
+      "bullets": [
+        "Book page photos → Claude vision structured extraction through the Batch API, with a per-image cache",
+        "Continuity checks and Pydantic validation before data reaches the study app",
+        "Outputs study pages, 4-accent TTS audio, Anki decks and a 5,083-note knowledge graph",
+        "Used daily for my own TOEIC study"
+      ],
+      "stack": [
+        "Python",
+        "Claude API",
+        "Batch API",
+        "Pydantic"
+      ],
+      "skills": [
+        "vision",
+        "eval",
+        "pipelines",
+        "llm-cost"
+      ],
+      "repo": true
+    },
+    {
+      "id": "agent-workflow",
+      "kind": "item",
+      "sec": "green",
+      "icon": "chip",
+      "x": 690,
+      "y": 448,
+      "parent": "build",
+      "code": "P-04",
+      "label": "agent-workflow",
+      "sub": "Python · Claude Code + Codex",
+      "title": "Agent workflow",
+      "meta": "Multi-agent coding workflow · Oct 2026",
+      "text": "Measured fixes for a stalled multi-agent coding session.",
+      "bullets": [
+        "Claude orchestrator dispatching Claude and Codex workers into isolated git worktrees",
+        "Job lock and health metrics decide how much work runs in parallel",
+        "Task contracts, stage gates and evidence rules before work is accepted"
+      ],
+      "stack": [
+        "Python",
+        "Claude Code",
+        "Codex",
+        "git worktrees"
+      ],
+      "skills": [
+        "agents",
+        "eval",
+        "ai-workflow"
+      ],
+      "repo": true
+    },
+    {
+      "id": "pet-to-character",
+      "kind": "item",
+      "sec": "green",
+      "icon": "chip",
+      "x": 690,
+      "y": 514,
+      "parent": "build",
+      "code": "P-05",
+      "label": "pet-to-character",
+      "sub": "Python · 3D pipeline · 2026",
+      "title": "Pet to character",
+      "meta": "Photo → rigged 3D game character · Sep – Oct 2026",
+      "bullets": [
+        "Cat photo → segmentation → multi-view → 3D → retopology (3,500-triangle budget) → rig → sprite walk cycles",
+        "39 numbered experiments with per-stage JSON review reports",
+        "Gates and decision logs; failed attempts are kept, not hidden"
+      ],
+      "stack": [
+        "Python",
+        "Tripo 3D",
+        "Blender"
+      ],
+      "skills": [
+        "eval",
+        "vision",
+        "pipelines"
+      ],
+      "repo": true
+    },
+    {
+      "id": "arc-web",
+      "kind": "arc",
+      "sec": "archive",
+      "icon": "disk",
+      "x": 690,
+      "y": 640,
+      "parent": "archive",
+      "hidden": true,
+      "code": "R-01",
+      "label": "django web apps",
+      "sub": "Python · 2023",
+      "title": "Django web apps",
+      "meta": "Archive · 2023",
+      "text": "A store app and two auth experiments from university.",
+      "links": [
+        [
+          "blacktea_store",
+          "https://github.com/blacktea3250106/blacktea_store"
+        ],
+        [
+          "django_oauth",
+          "https://github.com/blacktea3250106/django_oauth"
+        ],
+        [
+          "DRF_auth",
+          "https://github.com/blacktea3250106/DRF_auth"
+        ]
+      ],
+      "skills": [
+        "auth",
+        "fullstack"
+      ]
+    },
+    {
+      "id": "arc-bots",
+      "kind": "arc",
+      "sec": "archive",
+      "icon": "disk",
+      "x": 690,
+      "y": 706,
+      "parent": "archive",
+      "hidden": true,
+      "code": "R-02",
+      "label": "bots & automation",
+      "sub": "Python · Flask · 2023–24",
+      "title": "Bots and automation",
+      "meta": "Archive · 2023 – 2024",
+      "text": "LINE bots for stock alerts and candlestick charts, plus a batch downloader for Taiwan Railways receipts.",
+      "links": [
+        [
+          "stock-candlestick-linebot",
+          "https://github.com/blacktea3250106/stock-candlestick-linebot"
+        ],
+        [
+          "stock-price-alert-linebot",
+          "https://github.com/blacktea3250106/stock-price-alert-linebot"
+        ],
+        [
+          "TRA-ticket-fetcher",
+          "https://github.com/blacktea3250106/TRA-ticket-fetcher"
+        ]
+      ]
+    },
+    {
+      "id": "arc-vision",
+      "kind": "arc",
+      "sec": "archive",
+      "icon": "disk",
+      "x": 690,
+      "y": 772,
+      "parent": "archive",
+      "hidden": true,
+      "code": "R-03",
+      "label": "computer vision",
+      "sub": "FaceNet · OpenCV · YOLOv5",
+      "title": "Computer vision",
+      "meta": "Archive · 2022 – 2024",
+      "text": "Real-time face recognition, color detection, and the YOLOv5 UAV search research behind the co-authored paper.",
+      "links": [
+        [
+          "real-time-face-recognition",
+          "https://github.com/blacktea3250106/real-time-face-recognition"
+        ],
+        [
+          "color-dectection",
+          "https://github.com/blacktea3250106/color-dectection"
+        ],
+        [
+          "MDPI Machines paper",
+          "https://doi.org/10.3390/machines12010065"
+        ]
+      ],
+      "skills": [
+        "vision"
+      ]
+    },
+    {
+      "id": "arc-games",
+      "kind": "arc",
+      "sec": "archive",
+      "icon": "disk",
+      "x": 690,
+      "y": 838,
+      "parent": "archive",
+      "hidden": true,
+      "code": "R-04",
+      "label": "games",
+      "sub": "C · Java · 2023",
+      "title": "Games",
+      "meta": "Archive · 2023",
+      "text": "Five small games in C and Java. Where the habit of building things people can play started.",
+      "links": [
+        [
+          "doublesnake-showdown",
+          "https://github.com/blacktea3250106/doublesnake-showdown"
+        ],
+        [
+          "magikarp-pipe-odyssey",
+          "https://github.com/blacktea3250106/magikarp-pipe-odyssey"
+        ],
+        [
+          "the-colorful-snake",
+          "https://github.com/blacktea3250106/the-colorful-snake"
+        ],
+        [
+          "shoot-ball",
+          "https://github.com/blacktea3250106/shoot-ball"
+        ],
+        [
+          "the-road-car-challenge",
+          "https://github.com/blacktea3250106/the-road-car-challenge"
+        ]
+      ]
+    }
+  ]
+}

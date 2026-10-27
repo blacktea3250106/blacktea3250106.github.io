@@ -1,0 +1,17 @@
+---
+// Skill "stats": one bar block per node that shows the skill in use.
+const { nodes, skills } = Astro.props;
+const uses = (id) => nodes.filter((n) => (n.skills ?? []).includes(id)).length;
+---
+<div class="stats">
+  {skills.map(([id, label]) => {
+    const u = uses(id);
+    return (
+      <>
+        <button type="button" data-cmd={'filter ' + id}>{label}</button>
+        <span class="bar" aria-hidden="true">{Array.from({ length: 6 }, (_, i) => <i class={i < u ? 'on' : ''}></i>)}</span>
+        <span class="n">{u} node{u === 1 ? '' : 's'}</span>
+      </>
+    );
+  })}
+</div>

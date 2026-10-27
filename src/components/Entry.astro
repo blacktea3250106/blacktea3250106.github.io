@@ -1,0 +1,21 @@
+---
+// One reader entry: a job, a public build, or an archive group.
+const { n, skills } = Astro.props;
+const GH = 'https://github.com/blacktea3250106/';
+const label = Object.fromEntries(skills);
+const links = [...(n.repo ? [['source', GH + n.id]] : []), ...(n.links ?? [])];
+const style = `--c: var(--${n.sec}); --ch: var(--${n.sec}-hi); --cd: var(--${n.sec}-dim);`;
+---
+<div class="r-entry" id={'r-' + n.id} data-skills={(n.skills ?? []).join(' ')} style={style}>
+  <div class="r-head"><h3>{n.title}</h3><span class="r-code">{n.code}</span></div>
+  {n.meta && <div class="meta">{n.meta}</div>}
+  {n.text && <p>{n.text}</p>}
+  {n.bullets && <ul>{n.bullets.map((b) => <li>{b}</li>)}</ul>}
+  {n.stack && <div class="r-stack">{n.stack.join(' · ')}</div>}
+  {(n.skills || links.length > 0) && (
+    <div class="chips">
+      {(n.skills ?? []).map((k) => <button type="button" class="chip" data-cmd={'filter ' + k}>{label[k]}</button>)}
+      {links.map(([t, href]) => <a class="chip" href={href} target="_blank" rel="noopener">{t} ↗</a>)}
+    </div>
+  )}
+</div>

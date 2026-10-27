@@ -1,0 +1,159 @@
+---
+import '../styles/site.css';
+import Entry from '../components/Entry.astro';
+import Stats from '../components/Stats.astro';
+import data from '../data/site.json';
+
+const { nodes, skills } = data;
+const byId = Object.fromEntries(nodes.map((n) => [n.id, n]));
+const root = byId.root;
+const kids = (hub) => nodes.filter((n) => n.parent === hub);
+const sec = (s) => `--c: var(--${s}); --ch: var(--${s}-hi); --cd: var(--${s}-dim);`;
+const PROMPT = 'C:\\Users\\haofu>';
+const LINKEDIN = 'https://www.linkedin.com/in/haofuchang';
+const GITHUB = 'https://github.com/blacktea3250106';
+const site = Astro.site?.href ?? '/';
+const title = 'Hao-Fu Chang · AI Product Engineer';
+const builds = kids('build').length;
+const works = kids('work').length;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{title}</title>
+    <meta name="description" content={root.text} />
+    <link rel="canonical" href={site} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={root.text} />
+    <meta property="og:url" content={site} />
+    <meta property="og:image" content={new URL('/portrait.png', site).href} />
+    <meta name="theme-color" content="#0b0f17" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Pixelify+Sans:wght@400;500;600;700&family=VT323&display=swap" />
+    <script is:inline>
+      // pick the first view before paint: the visitor's last choice, else read on phones and map elsewhere
+      (() => {
+        let v = null;
+        try { v = localStorage.getItem('bp-view'); } catch {}
+        document.documentElement.dataset.view = v === 'read' || v === 'map' ? v : (innerWidth <= 760 ? 'read' : 'map');
+      })();
+    </script>
+    <noscript><style>.console, .views, .hud, .titleblock, .panel, #board { display: none !important; }</style></noscript>
+  </head>
+  <body>
+    <div class="app">
+      <header class="status">
+        <span class="exe">C:\Users\haofu<span>\blueprint.exe</span></span>
+        <div class="views" role="group" aria-label="View"><button type="button" data-view="map" aria-pressed="true">map</button><button type="button" data-view="read" aria-pressed="false">read</button></div>
+        <span class="spacer"></span>
+        <span class="stat">{works} companies · {builds} builds · {skills.length} skills</span>
+        <span class="live" id="clock">TPE --:--</span>
+      </header>
+
+      <main class="stage" id="stage">
+        <svg id="board" aria-label="Map of Hao-Fu Chang's work, projects and skills">
+          <defs>
+            <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+              <rect x="15" y="15" width="2" height="2" style="fill:var(--line)" />
+            </pattern>
+          </defs>
+          <rect x="-6000" y="-6000" width="12000" height="12000" fill="url(#grid)" />
+          <g id="edges"></g>
+          <g id="pulses"></g>
+          <g id="nodes"></g>
+          <g id="actor"></g>
+        </svg>
+
+        <div class="hud hud-tl">
+          <div class="coords pxbox" style="--c: var(--line)" id="coords">X 0000 Y 0000</div>
+          <div class="zoom" role="group" aria-label="Zoom">
+            <button type="button" class="pxbox" id="zin" aria-label="Zoom in">+</button>
+            <button type="button" class="pxbox" id="zout" aria-label="Zoom out">−</button>
+            <button type="button" class="pxbox" id="zfit">fit</button>
+          </div>
+        </div>
+
+        <div class="titleblock pxbox" aria-hidden="true">
+          <span>DWG</span><span>BT-3250106</span>
+          <span>REV</span><span>2026.10</span>
+          <span>SCALE</span><span id="scale">1 : 1.00</span>
+          <span>MOVE</span><span class="keys">←↑→↓ / WASD</span>
+        </div>
+
+        <article class="reader" id="reader">
+          <div class="r-wrap">
+            <div class="r-filter" id="rFilter" hidden></div>
+
+            <section class="r-sec" id="r-root" style={sec('orange')}>
+              <div class="r-cmd">{PROMPT}type about.txt</div>
+              <div class="r-hero">
+                <img class="portrait px" src="/portrait.png" alt="Pixel portrait of Hao-Fu" width="96" height="96" />
+                <div><h1 class="r-name">{root.title}</h1><div class="meta">{root.meta}</div></div>
+              </div>
+              <p>{root.text}</p>
+              <ul>{root.bullets.map((b) => <li>{b}</li>)}</ul>
+              <div>
+                <div class="label">CONTACT</div>
+                <div class="links">
+                  <a href={LINKEDIN} target="_blank" rel="noopener">linkedin.com/in/haofuchang ↗</a>
+                  <a href={GITHUB} target="_blank" rel="noopener">github.com/blacktea3250106 ↗</a>
+                </div>
+              </div>
+            </section>
+
+            <section class="r-sec" id="r-work" style={sec('orange')}>
+              <div class="r-cmd">{PROMPT}dir work<span class="dim">  REM full-time roles</span></div>
+              {kids('work').map((n) => <Entry n={n} skills={skills} />)}
+            </section>
+
+            <section class="r-sec" id="r-build" style={sec('green')}>
+              <div class="r-cmd">{PROMPT}dir build<span class="dim">  REM public repos, 2026</span></div>
+              {kids('build').map((n) => <Entry n={n} skills={skills} />)}
+            </section>
+
+            <section class="r-sec" id="r-skills" style={sec('blue')}>
+              <div class="r-cmd">{PROMPT}skills<span class="dim">  REM evidence per skill · click to highlight</span></div>
+              <Stats nodes={nodes} skills={skills} />
+            </section>
+
+            <section class="r-sec" style={sec('archive')}>
+              <div class="r-cmd">{PROMPT}dir archive<span class="dim">  REM 2018–2024</span></div>
+              <Entry n={byId.archive} skills={skills} />
+              {kids('archive').map((n) => <Entry n={n} skills={skills} />)}
+            </section>
+          </div>
+        </article>
+
+        <aside class="panel pxbox" id="panel" aria-live="polite">
+          <div class="panel-head">
+            <img class="portrait px" src="/portrait.png" alt="Pixel portrait of Hao-Fu" width="64" height="64" />
+            <div class="who"><div class="speaker">HAO-FU</div><div class="eyebrow" id="eyebrow">A-00 · ENGINEER</div></div>
+            <button type="button" id="collapse" aria-expanded="true">[ hide ]</button>
+          </div>
+          <div class="panel-body" id="panelBody"></div>
+        </aside>
+      </main>
+
+      <section class="console">
+        <div class="log" id="log"></div>
+        <div class="quick" id="quick">
+          {['help', 'whoami', 'dir', 'skills', 'filter eval', 'archive', 'contact'].map((c) => (
+            <button type="button" class="pxbox" style="--c: var(--orange-dim)" data-cmd={c}>{c}</button>
+          ))}
+        </div>
+        <form class="cmdline" id="cmdform" autocomplete="off">
+          <label for="cmd"><span class="full">C:\Users\haofu</span>&gt;</label>
+          <input id="cmd" name="cmd" spellcheck="false" autocapitalize="off" placeholder="type help · Tab completes" />
+        </form>
+      </section>
+    </div>
+
+    <script type="application/json" id="site-data" set:html={JSON.stringify(data)}></script>
+    <script src="../scripts/app.js"></script>
+  </body>
+</html>
